@@ -7,22 +7,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="./css/reset.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" media="screen" href="./css/style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/style.css" />
     <script src="./assets/javascript/script.js"></script>
 </head>
 <body>
     <div id="main" class="col-md-12 m3">
+        <h1 class="text-center text-light bg-secondary p-2">Search Giphy!</h1>
         <div id="taglist" class="row"> 
         </div>
-        <div id="results" class="col-md-8">
-        </div>
-        <div id="search" class="col-md-4">
-                <nav class="navbar navbar-light bg-light">
-                        <form class="form-inline">
-                          <input class="form-control mr-sm-2" type="search" placeholder="Search Giphy" aria-label="Search">
-                          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                        </form>
-                      </nav>
+        <div class="row">
+            <div id="results" class="jumbotron col-md-8">
+                <h5 class="text-center">Recent Searches:</h5>
+            </div>
+            <div id="search" class="">
+                    <nav class="navbar navbar-dark bg-dark">
+                            <form class="form-inline">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search Giphy" aria-label="Search">
+                            <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+                            </form>
+                        </nav>
+            </div>
         </div>
     </div>
     
