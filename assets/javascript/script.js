@@ -1,4 +1,5 @@
 window.onload = function(){
+var buttons = [];
 
 $("#search-exec").on("click", function(event) {
     event.preventDefault();
@@ -11,9 +12,13 @@ $("#search-exec").on("click", function(event) {
         url: queryURL,
         method: "GET"
       }).then(function(response) {
+        buttons.push(gifsrch);
+        console.log(buttons);
         console.log(response);
-        $("#results").append("<img class='m-1' src='"+response.data[0].images.fixed_height_small.url+"' alt='srchresult'>")
-      })
+          for(i=0; response.data.length; i++){
+            $("#results").prepend("<img class='m-1' src='"+response.data[i].images.fixed_height_small.url+"' alt='srchresult'>")
+          }
+    })
 
       $("#recent").append("<button type='button' class='btn button-info m-2'>"+gifsrch+"</button>");
       $("#srchinput").val('');
