@@ -8,7 +8,8 @@ $("#search-exec").on("click", function(event) {
     const limit = "&limit=10"
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + gifsrch + api_key + limit;
     var trimmed = gifsrch.replace(/ +/g, "");
-
+    
+    function search(){
     $.ajax({
         url: queryURL,
         method: "GET"
@@ -21,8 +22,11 @@ $("#search-exec").on("click", function(event) {
           for(i=0; response.data.length; i++){
             $("#"+trimmed).append("<img class='m-1 gif' src='"+response.data[i].images.fixed_height_still.url+"' data-still='"+response.data[i].images.fixed_height_still.url+ "' data-animate='"+response.data[i].images.fixed_height.url+"' data-state='still' alt='srchresult"+i+"'>")
           }
-          
         });
+      }
+
+    search();
+
         
         $(document).on("click",".gif", function() {
             var state = $(this).attr("data-state"); 
@@ -34,8 +38,7 @@ $("#search-exec").on("click", function(event) {
               $(this).attr("data-state", "still");
               };
           })
-      $("#recent").append("<button id='"+trimmed+"btn' type='button' class='btn button-info m-2'>"+gifsrch+"</button>");
-        
+      $("#recent").append("<button id='"+trimmed+"btn' type='button' class='btn button-info m-2'>"+gifsrch+"</button>"); 
       $("#srchinput").val('');
 
 })
